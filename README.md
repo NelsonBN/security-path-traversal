@@ -1,4 +1,4 @@
-# Security - Demo about Path Traversal
+# Security - Demo about Path Traversal Attack
 
 ## What is Path Traversal?
 
