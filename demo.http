@@ -1,0 +1,45 @@
+##### Vulnerable Api #####
+@hostVulnerable = http://localhost:8080
+
+### Not Found file
+GET {{hostVulnerable}}/download?fileName=xpto.json
+
+### Allowed file
+GET {{hostVulnerable}}/download?fileName=MyFile.json
+
+### Vulnerable file - Path Traversal - appsettings.json
+GET {{hostVulnerable}}/download?fileName=../appsettings.json
+
+### Vulnerable file - Path Traversal - web.config
+GET {{hostVulnerable}}/download?fileName=../web.config
+
+### Vulnerable file - Path Traversal - ./etc/ca-certificates.conf
+GET {{hostVulnerable}}/download?fileName=../../etc/ca-certificates.conf
+
+### Vulnerable file - Path Traversal - ./etc/passwd
+GET {{hostVulnerable}}/download?fileName=../../etc/passwd
+
+
+############
+
+
+##### Secure Api #####
+@hostSecure = http://localhost:8081
+
+### Not Found file
+GET {{hostSecure}}/download?fileName=xpto.json
+
+### Allowed file
+GET {{hostSecure}}/download?fileName=MyFile.json
+
+### Vulnerable file - Path Traversal - appsettings.json
+GET {{hostSecure}}/download?fileName=../appsettings.json
+
+### Vulnerable file - Path Traversal - web.config
+GET {{hostSecure}}/download?fileName=../web.config
+
+### Vulnerable file - Path Traversal - ./etc/ca-certificates.conf
+GET {{hostSecure}}/download?fileName=../../etc/ca-certificates.conf
+
+### Vulnerable file - Path Traversal - ./etc/passwd
+GET {{hostSecure}}/download?fileName=../../etc/passwd

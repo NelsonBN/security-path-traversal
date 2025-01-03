@@ -1,0 +1,19 @@
+services:
+
+  vulnerable-api:
+    build:
+      context: ./src/VulnerableApi/
+      dockerfile: Dockerfile
+    image: vulnerable-api
+    container_name: vulnerable-api
+    ports:
+      - 8080:8080
+
+  secure-api:
+    build:
+      context: ./src/SecureApi/
+      dockerfile: Dockerfile
+    image: secure-api
+    container_name: secure-api
+    ports:
+      - 8081:8080
